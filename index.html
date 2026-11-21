@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>추억의 추천 상품</title>
+<style>
+:root{--bg:#fff8ec;--card:#ffffff;--ink:#222;--sub:#555;--line:#e7dcc8;--brand:#e8590c;--brand-ink:#fff;--notice:#fff3cd;--notice-line:#e0b84f}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1a16;--card:#2a261f;--ink:#f3eee6;--sub:#cfc6b8;--line:#4a4235;--brand:#ff7a2e;--brand-ink:#1d1a16;--notice:#3a3220;--notice-line:#8a7232}}
+*{box-sizing:border-box}
+html{font-size:20px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.9rem;margin:8px 0 4px;letter-spacing:-.5px}
+.lead{margin:0 0 14px;color:var(--sub);font-size:1.05rem}
+.notice{background:var(--notice);border:2px solid var(--notice-line);border-radius:14px;padding:12px 14px;font-weight:700;font-size:1.05rem}
+.search{margin:18px 0 6px}
+.search label{display:block;font-weight:700;margin-bottom:6px}
+.search input{width:100%;font-size:1.15rem;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
+.count{color:var(--sub);margin:6px 0 14px;font-size:1rem}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:720px){.list{grid-template-columns:1fr 1fr}}
+.item{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.photo{aspect-ratio:4/3;border-radius:12px;background:repeating-linear-gradient(45deg,#f1e7d6 0 14px,#f7efe2 14px 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:#7a6a52;font-size:1rem;padding:10px;overflow:hidden}
+@media (prefers-color-scheme:dark){.photo{background:repeating-linear-gradient(45deg,#332d24 0 14px,#3a342a 14px 28px);color:#cbbb9f}}
+.photo.has-img{aspect-ratio:auto;background:#fff;padding:0;display:block}
+@media (prefers-color-scheme:dark){.photo.has-img{background:#fff}}
+.photo img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;margin:0 auto}
+.imgnote{margin:-2px 0 0;font-size:.9rem;color:var(--sub);text-align:center}
+.video{display:inline-block;align-self:flex-start;background:#2f6fdf;color:#fff;border-radius:999px;padding:4px 12px;font-size:.95rem;font-weight:700}
+.name{font-size:1.3rem;font-weight:800;margin:0;word-break:keep-all}
+.pricenote{margin:0;color:var(--sub);font-size:1rem}
+.price{font-size:1.2rem;font-weight:800}
+.price small{display:block;font-weight:400;color:var(--sub);font-size:.85rem}
+.feats{margin:0;padding-left:1.2em}
+.btn{display:block;text-align:center;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-size:1.3rem;font-weight:800;padding:16px;border-radius:14px;margin-top:auto}
+.btn:focus-visible{outline:4px solid #2f6fdf;outline-offset:3px}
+.linknote{font-size:.9rem;color:var(--sub);text-align:center;margin:0}
+.empty{display:none;padding:20px;text-align:center;font-size:1.1rem;color:var(--sub)}
+footer{margin:28px 0 12px;color:var(--sub);font-size:.95rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+<h1>추억의 추천 상품</h1>
+<p class="lead">영상에서 소개한 상품을 모아 두었어요. 위에 있을수록 최근 영상이에요.<br><small id="updated">마지막 상품 추가: 2026-11-20</small></p>
+<p class="notice" role="note">📢 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+<div class="search">
+<label for="q">영상 번호나 상품 이름으로 찾기</label>
+<input id="q" type="search" inputmode="search" placeholder="예: 45 또는 효자손" autocomplete="off">
+</div>
+<p class="count" id="count" aria-live="polite"></p>
+<ul class="list">
+<li class="item" data-search="양은황주전자2l,골드,1개그시절이야기5화·운동회날엄마가따라준보리차" data-video="">
+<div class="photo has-img"><img src="images/cp8328742755.jpg" alt="양은 황주전자 2L, 골드, 1개 참고 그림" width="900" height="900" loading="lazy"></div>
+<p class="imgnote">AI로 그린 제품 일러스트입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">그 시절 이야기 5화 · 운동회 날 엄마가 따라 준 보리차</span>
+<h2 class="name">양은 황주전자 2L, 골드, 1개</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p><ul class="feats"><li>둥근 금빛 몸통의 양은 주전자</li><li>용량 2L, 골드 색상</li></ul>
+<a class="btn" href="https://link.coupang.com/a/iPyEgzh696" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li><li class="item" data-search="티티하이샤파기차연필깎이ki-200,실버,1개그시절이야기4화·아빠가깎아주던첫연필" data-video="">
+<div class="photo has-img"><img src="images/cp6113464391.jpg" alt="티티 하이샤파 기차 연필깎이 KI-200, 실버, 1개 참고 그림" width="900" height="900" loading="lazy"></div>
+<p class="imgnote">AI로 그린 제품 일러스트입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">그 시절 이야기 4화 · 아빠가 깎아 주던 첫 연필</span>
+<h2 class="name">티티 하이샤파 기차 연필깎이 KI-200, 실버, 1개</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p><ul class="feats"><li>은색 기차 모양 연필깎이</li><li>앞쪽 연필 투입구, 검은 부스러기 통</li></ul>
+<a class="btn" href="https://link.coupang.com/a/iPphYG4wIS" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li><li class="item" data-search="심플팬레트로알루미늄원형쟁반,실버,미니왕대,1개그시절이야기3화·할머니가내어주시던그쟁반" data-video="">
+<div class="photo has-img"><img src="images/cp9396088319.jpg" alt="심플팬 레트로 알루미늄 원형 쟁반, 실버, 미니왕대, 1개 참고 그림" width="900" height="900" loading="lazy"></div>
+<p class="imgnote">AI로 그린 제품 일러스트입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">그 시절 이야기 3화 · 할머니가 내어주시던 그 쟁반</span>
+<h2 class="name">심플팬 레트로 알루미늄 원형 쟁반, 실버, 미니왕대, 1개</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p><ul class="feats"><li>은색 원형 쟁반</li><li>가운데 꽃무늬, 손잡이 없는 모양</li></ul>
+<a class="btn" href="https://link.coupang.com/a/iOQciD7hVk" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li><li class="item" data-search="추억의옛날양은도시락통알루미늄나들이레트로양철도시락,1개,금색-직사각대도시락그시절이야기2화·엄마가부르던그저녁" data-video="">
+<div class="photo has-img"><img src="images/cp7404350965.jpg" alt="추억의 옛날 양은 도시락통 알루미늄 나들이 레트로 양철 도시락, 1개, 금색-직사각대 도시락 참고 그림" width="900" height="900" loading="lazy"></div>
+<p class="imgnote">AI 제작 연출 이미지입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">그 시절 이야기 2화 · 엄마가 부르던 그 저녁</span>
+<h2 class="name">추억의 옛날 양은 도시락통 알루미늄 나들이 레트로 양철 도시락, 1개, 금색-직사각대 도시락</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p><ul class="feats"><li>금색 직사각형 도시락</li><li>같은 색 뚜껑이 있는 한 칸 도시락</li></ul>
+<a class="btn" href="https://link.coupang.com/a/iObASghhMi" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li><li class="item" data-search="모두잇led대형라이트확대경그시절이야기1화·학교앞문방구" data-video="">
+<div class="photo has-img"><img src="images/cp9568913593.jpg" alt="모두잇 LED 대형 라이트 확대경 참고 그림" width="900" height="912" loading="lazy"></div>
+<p class="imgnote">AI 제작 연출 이미지입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">그 시절 이야기 1화 · 학교 앞 문방구</span>
+<h2 class="name">모두잇 LED 대형 라이트 확대경</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p><ul class="feats"><li>손잡이형 돋보기</li><li>LED 조명</li></ul>
+<a class="btn" href="https://link.coupang.com/a/iNHeZogJk4" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li><li class="item" data-search="f.ssun효자손등긁개1개(옐로우옵션)45탄추억의물건퀴즈45탄·할머니방추억" data-video="45">
+<div class="photo has-img"><img src="images/cp7830779661.jpg" alt="F.SSUN 효자손 등긁개 1개 (옐로우 옵션) 참고 그림" width="900" height="900" loading="lazy"></div>
+<p class="imgnote">AI 제작 연출 이미지입니다. 실제 상품과 다를 수 있습니다.</p>
+<span class="video">추억의 물건 퀴즈 45탄 · 할머니 방 추억</span>
+<h2 class="name">F.SSUN 효자손 등긁개 1개 (옐로우 옵션)</h2>
+<p class="pricenote">가격과 할인 정보는 자주 바뀌어요. 지금 가격은 쿠팡에서 확인해 주세요.</p>
+<a class="btn" href="https://link.coupang.com/a/iKqsEE6zx6" target="_blank" rel="sponsored noopener noreferrer">쿠팡에서 보기 ›</a>
+<p class="linknote">쿠팡 파트너스 제휴 링크 — 구매 시 일정액의 수수료를 받아요</p>
+</li>
+</ul>
+<p class="empty" id="empty">찾는 상품이 없어요. 영상 번호를 숫자로만 넣어 보세요 (예: 45).</p>
+<footer>이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격·재고·배송은 바뀔 수 있으니 쿠팡 상품 페이지에서 확인해 주세요.</footer>
+</main>
+<script>
+(function(){
+  var q=document.getElementById('q'), items=[].slice.call(document.querySelectorAll('.item')),
+      cnt=document.getElementById('count'), empty=document.getElementById('empty');
+  function norm(s){return (s||'').toLowerCase().replace(/\s+/g,'').replace(/탄$/,'');}
+  function run(){
+    var k=norm(q.value), n=0;
+    items.forEach(function(el){
+      var hit=!k || el.getAttribute('data-search').indexOf(k)>=0 || el.getAttribute('data-video')===k;
+      el.style.display=hit?'':'none'; if(hit) n++;
+    });
+    cnt.textContent = k ? ('찾은 상품 '+n+'개') : ('전체 상품 '+items.length+'개 · 최신순');
+    empty.style.display = n ? 'none' : 'block';
+  }
+  q.addEventListener('input',run); run();
+})();
+</script>
+</body>
+</html>
